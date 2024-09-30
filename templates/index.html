@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <section class="home">
+        <div class="row">
+            <div class="col" style="border-right: 1px solid #000; background: #000; padding: 2.5%;" >
+                <div class="col row-1-home">
+                    <img src="{{ url_for('static', filename='./style/IMG/logo3.png') }}" alt="" id="logo">
+                    <img src="{{ url_for('static', filename='./style/IMG/brand white.png') }}" alt="" style="margin-top: 2%;">
+                </div>
+                <img src="./{{ url_for('static', filename='./style/IMG/bg.png') }}" alt="img_1">
+            </div>
+            <div class="col" style="text-align: center;">
+                <a href="{{ url_for('register' ) }}">Create New Account</a>
+    <a href="{{ url_for('login' ) }}">Login To Existing Account</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

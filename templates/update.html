@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Master</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <section>
+        <nav>
+            <img src="{{ url_for('static', filename='./style/IMG/logo3.png') }}" alt="" style="height: 70px;">
+            <ul>
+                <li><a href="{{ url_for('dashboard' ) }}">Dashboard</a></li>
+                <li><a href="{{ url_for('add' ) }}">Add Task</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <a href="{{ url_for('logout' ) }}" class="logout">Sign Out</a>
+        </nav>
+        <form action="/update/{{task.id}}" method="POST" class="add">
+            {{ form.hidden_tag() }}
+    
+            {{ form.task }}
+            {{ form.submit }}
+        </form>
+    </section>
+</div>
+{% endblock %}

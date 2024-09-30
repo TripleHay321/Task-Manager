@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Login</title>
+{% endblock %}
+
+{% block body %}
+<div class="top">
+</div>
+    <div class="container">
+        <section class="login">
+            <div class="fluid_container">
+                <a href="{{ url_for('home' ) }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24">
+                        <g fill="#000">
+                            <path d="m11.948 14.829l-1.414 1.414L6.29 12l4.243-4.243l1.414 1.415L10.12 11h7.537v2H10.12z" />
+                            <path fill-rule="evenodd" d="M4.222 19.778c-4.296-4.296-4.296-11.26 0-15.556s11.26-4.296 15.556 0s4.296 11.26 0 15.556s-11.26 4.296-15.556 0m1.414-1.414A9 9 0 1 1 18.364 5.636A9 9 0 0 1 5.636 18.364" clip-rule="evenodd" />
+                        </g>
+                    </svg>
+                </a>
+                <h2>Welcome back</h2>
+                <h4>Welcome back! Please enter your details.</h4>
+                <form action="/login" method="POST" class="login">
+                    {{ form.hidden_tag() }}
+    
+                    <label for="email">Username</label><br>
+                    {{ form.username }} <br>
+    
+                    <label for="password">Your password</label><br>
+                    {{ form.password }} <br>
+                    
+                    {{ form.submit }} <br>
+                    <a class="to_login" href="{{ url_for('register') }}"><span style="color: rgb(128, 128, 128);">Don't have an account?</span> Sign Up</a><br>
+                    <a class="to_login" href="{{ url_for('register') }}">Forgot Password?</a>
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

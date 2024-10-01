@@ -3,6 +3,4 @@ services:
   - type: web
      name: app
      env: python
-     buildCommand: pip install -r requirements.txt
-     startCommand: python3 app.py
-     autoDeploy:true
+     pythonVersion: 3.10
